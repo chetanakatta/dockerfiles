@@ -1,8 +1,11 @@
 #ARG can be 1st instruction in only one case...used to supply the version for FROM instruction
 ARG version
-FROM almalinux:${version}
+#FROM almalinux:${version} --->commandline
+FROM almalinux:${version:-8}
+#setting default value can be overriden by command line
 #RUN cat /etc/*release
-ARG course
-ARG trainer
+ARG course=Docker
+#or we can set default value like this also
+ARG trainer=siva
 RUN echo "course is: ${course}, trainer is: ${trainer}"
 CMD ["sleep", "100"]
