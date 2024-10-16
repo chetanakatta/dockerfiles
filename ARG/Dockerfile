@@ -7,5 +7,6 @@ FROM almalinux:${version:-8}
 ARG course=docker
 #or we can set default value like this also
 ARG trainer=chetana
-RUN echo "course is: ${course}, trainer is: ${trainer}"
+ENV duration=120hrs
+RUN echo "course is: ${course}, trainer is: ${trainer}, duration is: ${duration}}"
 CMD ["sleep", "100"]
