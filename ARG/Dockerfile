@@ -7,6 +7,8 @@ FROM almalinux:${version:-8}
 ARG course=docker
 #or we can set default value like this also
 ARG trainer=chetana
-ENV duration=120hrs
+ARG duration=120hrs
+ENV duration=${duration}
+##by setting env with same name as arg..we can access arg inside the container
 RUN echo "course is: ${course}, trainer is: ${trainer}, duration is: ${duration}}"
 CMD ["sleep", "100"]
