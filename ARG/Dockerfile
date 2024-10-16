@@ -4,8 +4,9 @@ ARG version
 FROM almalinux:${version:-8}
 #setting default value can be overriden by command line
 #RUN cat /etc/*release
-ARG course=Docker
+ARG course
 #or we can set default value like this also
-ARG trainer=siva
-RUN echo "course is: ${course}, trainer is: ${trainer}"
+ARG trainer
+#RUN echo "course is: ${course}, trainer is: ${trainer}"
+RUN echo "course is: ${course:-docker}, trainer is: ${trainer:-siva}"
 CMD ["sleep", "100"]
